@@ -5,7 +5,7 @@
 
 	let moviesData = data.moviesData.results;
 	let TVData = data.TVData.results;
-console.log(moviesData);
+
 	const hanldeClick = async (e, type) => {
 		const time = e.target.checked ? 'week' : 'day';
 
