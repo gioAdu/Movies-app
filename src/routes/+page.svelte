@@ -2,10 +2,10 @@
 	import Carousel from '../lib/components/Carousel.svelte';
 
 	export let data;
-	console.log(data);
+
 	let moviesData = data.moviesData.results;
 	let TVData = data.TVData.results;
-
+console.log(moviesData);
 	const hanldeClick = async (e, type) => {
 		const time = e.target.checked ? 'week' : 'day';
 
@@ -28,12 +28,6 @@
 	};
 
 </script>
-
-<form>
-	<label>
-		<button>SEACH</button>
-	</label>
-</form>
 
 <div class="flex px-4 pt-10 flex-col gap-3 pb-4 border border-accent rounded-md mt-4 mx-2">
 	<h1 class="text-4xl">Welcome</h1>
