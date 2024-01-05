@@ -1,1 +1,0 @@
-<h1>inner page</h1>
