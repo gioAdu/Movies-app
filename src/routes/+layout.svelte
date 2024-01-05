@@ -63,5 +63,6 @@
 <style>
 	:global(html) {
 		overflow-x: hidden;
+		font-family: 'Source Sans 3', sans-serif;
 	}
 </style>
