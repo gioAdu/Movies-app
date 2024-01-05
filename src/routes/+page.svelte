@@ -2,11 +2,38 @@
 	import Carousel from '../lib/components/Carousel.svelte';
 
 	export let data;
+	console.log(data);
+	let moviesData = data.moviesData.results;
+	let TVData = data.TVData.results;
 
-	const moviesData = data.moviesData.results;
-	const TVData = data.TVData.results;
-	console.log(TVData);
+	const hanldeClick = async (e, type) => {
+		const time = e.target.checked ? 'week' : 'day';
+
+		const options = {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ time, type })
+		};
+
+		const res = await fetch('/api', options);
+		const responseData = await res.json();
+
+		if (type === 'movie') {
+			return (moviesData = responseData.moviesData.results);
+		} else {
+			return (TVData = responseData.moviesData.results);
+		}
+	};
+
 </script>
+
+<form>
+	<label>
+		<button>SEACH</button>
+	</label>
+</form>
 
 <div class="flex px-4 pt-10 flex-col gap-3 pb-4 border border-accent rounded-md mt-4 mx-2">
 	<h1 class="text-4xl">Welcome</h1>
@@ -24,12 +51,18 @@
 		<h2 class="text-3xl">Trending Movies |</h2>
 		<label class="flex cursor-pointer gap-2 items-end">
 			<span class="label-text text-xl">Today</span>
-			<input type="checkbox" class="toggle toggle-accent" />
+			<input
+				type="checkbox"
+				class="toggle toggle-accent"
+				on:click={(e) => hanldeClick(e, 'movie')}
+			/>
 			<span class="label-text text-xl">This week</span>
 		</label>
 	</div>
 
-	<Carousel data={moviesData} />
+	{#key moviesData}
+		<Carousel data={moviesData} />
+	{/key}
 </div>
 
 <div class="p-2">
@@ -37,10 +70,12 @@
 		<h2 class="text-3xl">Trending TV Shows |</h2>
 		<label class="flex cursor-pointer gap-2 items-end">
 			<span class="label-text text-xl">Today</span>
-			<input type="checkbox" class="toggle toggle-accent" />
+			<input type="checkbox" class="toggle toggle-accent" on:click={(e) => hanldeClick(e, 'tv')} />
 			<span class="label-text text-xl">This week</span>
 		</label>
 	</div>
 
-	<Carousel data={TVData} />
+	{#key TVData}
+		<Carousel data={TVData} />
+	{/key}
 </div>
