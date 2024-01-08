@@ -1,5 +1,5 @@
 <script>
-	import Carousel from '$lib/components/Carousel.svelte';
+	import MovieCarousel from '$lib/components/MovieCarousel.svelte';
 
 	export let data;
 
@@ -55,7 +55,7 @@
 	</div>
 
 	{#key moviesData}
-		<Carousel data={moviesData} />
+		<MovieCarousel data={moviesData} />
 	{/key}
 </div>
 
@@ -70,6 +70,6 @@
 	</div>
 
 	{#key TVData}
-		<Carousel data={TVData} />
+		<MovieCarousel data={TVData} />
 	{/key}
 </div>
