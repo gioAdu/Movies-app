@@ -1,6 +1,6 @@
 import { API_KEY } from '$env/static/private';
 
-export async function getMovies(url) {
+export async function getData(url) {
 	const baseUrl = 'https://api.themoviedb.org/3';
 
 	const options = {
