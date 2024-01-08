@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { getMovies } from '../../lib/api/api.js';
+import { getMovies } from '$lib/api/api.js';
 
 export async function POST({ request }) {
   const { time , type } = await request.json()
