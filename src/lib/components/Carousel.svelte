@@ -2,6 +2,7 @@
 	import emblaCarouselSvelte from 'embla-carousel-svelte';
 	import Autoplay from 'embla-carousel-autoplay';
 	import { slide } from 'svelte/transition';
+	import RatingWheel from './RatingWheel.svelte';
 
 	export let data;
 
@@ -11,22 +12,6 @@
 
 	const onInit = (event) => {
 		emblaApi = event.detail;
-	};
-
-	const getRating = (rating) => {
-		return Math.round(rating * 10);
-	};
-
-	const getRatingClass = (rating) => {
-		const score = getRating(rating);
-
-		if (score > 70) {
-			return 'text-success';
-		} else if (score > 50) {
-			return 'text-warning';
-		} else {
-			return 'text-error';
-		}
 	};
 </script>
 
@@ -38,13 +23,8 @@
 			>
 				<div class="card bg-base-100 shadow-xl">
 					<div class="relative">
-						<div
-							class="radial-progress bg-black left-20 absolute -bottom-6
-              {getRatingClass(movie.vote_average)}"
-							style="--value:{getRating(movie.vote_average)}; --size: 3rem"
-							role="progressbar"
-						>
-							{getRating(movie.vote_average)}
+						<div class="left-20 absolute -bottom-6">
+							<RatingWheel {movie} />
 						</div>
 						<figure>
 							<img
