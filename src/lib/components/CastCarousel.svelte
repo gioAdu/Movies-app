@@ -12,6 +12,10 @@
 	const onInit = (event) => {
 		emblaApi = event.detail;
 	};
+
+	const picture = (cast) => {
+		return cast.profile_path ? `https://image.tmdb.org/t/p/w138_and_h175_face${cast.profile_path}` : '/default_icon.svg';
+	}
 </script>
 
 <div class="embla" use:emblaCarouselSvelte={{ options, plugins }} on:emblaInit={onInit}>
@@ -25,8 +29,8 @@
 						<figure>
 							<img
 								class="rounded-md"
-								src={`https://image.tmdb.org/t/p/w138_and_h175_face${cast.profile_path}`}
-								alt="Shoes"
+								src={picture(cast)}
+								alt={cast.name}
 							/>
 						</figure>
 					</div>
