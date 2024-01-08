@@ -1,5 +1,6 @@
 <script>
 	export let movie;
+  export let wheelSize = 3
 	const getRating = (rating) => {
 		return Math.round(rating * 10);
 	};
@@ -20,7 +21,7 @@
 <div
 	class="radial-progress bg-black
     {getRatingClass(movie.vote_average)}"
-	style="--value:{getRating(movie.vote_average)}; --size: 3rem"
+	style="--value:{getRating(movie.vote_average)}; --size: {wheelSize}rem"
 	role="progressbar"
 >
 	{getRating(movie.vote_average)}
