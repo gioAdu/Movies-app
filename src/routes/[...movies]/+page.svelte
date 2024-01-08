@@ -1,7 +1,11 @@
 <script>
+	import RatingWheel from '$lib/components/RatingWheel.svelte';
+	import { formatRuntime } from '$lib/helpers/runtimeFormatter';
+	import { formatNumber } from '$lib/helpers/numberFormatter';
 	export let data;
 
 	const movieData = data.movieDetails;
+	console.log(movieData);
 	const formattedYear = new Date(movieData.release_date).getFullYear();
 
 	const formattedDate = new Date(movieData.release_date).toLocaleDateString('en-US', {
@@ -10,7 +14,7 @@
 		day: 'numeric'
 	});
 
-	const test = movieData.genres
+	const genres = movieData.genres
 		.map((genre, i) => `${genre.name}${i < movieData.genres.length - 1 ? ', ' : ' • '}`)
 		.join('');
 </script>
@@ -21,21 +25,44 @@
 >
 	<div class="overlay">
 		<div class="container mx-auto">
-			<div class="card card-side shadow-xl text-white py-8">
-				<img
-					src={`https://image.tmdb.org/t/p/w300${movieData.poster_path}`}
-					alt="poster"
-					class="rounded"
-				/>
+			<div class="card sm:card-side items-center shadow-xl text-white py-8">
+				<div class="relative">
+					<div class="absolute -right-5 -top-5">
+						<RatingWheel movie={movieData} wheelSize="4" />
+					</div>
+					<figure>
+						<img
+							src={`https://image.tmdb.org/t/p/w300${movieData.poster_path}`}
+							alt="poster"
+							class="rounded"
+						/>
+					</figure>
+				</div>
 				<div class="card-body">
 					<h1 class="card-title text-4xl font-bold">
 						{movieData.title} <span class="text-gray-300 font-normal">({formattedYear})</span>
 					</h1>
-					<div>
+					<div class="py-4">
 						<span>{formattedDate} •</span>
-						{test}
+						{genres}
+						{formatRuntime(movieData.runtime)}
 					</div>
-					<p>{movieData.overview}</p>
+
+					<h2 class="text-xl italic text-gray-300">{movieData.tagline}</h2>
+					<h2 class="text-xl font-bold">Overview</h2>
+					<div>{movieData.overview}</div>
+
+					<div class=" gap-5">
+						<div class="flex gap-2 items-center">
+							<h3 class="text-xl">Budget :</h3>
+							<div>{formatNumber(movieData.budget)} $</div>
+						</div>
+
+						<div class="flex gap-2 items-center">
+							<h3 class="text-xl">Revenue :</h3>
+							<div>{formatNumber(movieData.revenue)} $</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
