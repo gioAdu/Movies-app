@@ -5,6 +5,7 @@
 	import RatingWheel from './RatingWheel.svelte';
 
 	export let data;
+	export let showWheel = true
 
 	let emblaApi;
 	let options = { loop: false, dragFree: true, containScroll: 'keepSnaps', slidesToScroll: 2 };
@@ -23,9 +24,11 @@
 			>
 				<div class="card bg-base-100 shadow-xl">
 					<div class="relative">
-						<div class="left-20 absolute -bottom-6">
+						{#if showWheel}
+						<div class="left-16 absolute -bottom-6">
 							<RatingWheel {movie} />
 						</div>
+						{/if}
 						<figure>
 							<img
 								class="rounded-md"
@@ -38,7 +41,7 @@
 						<h2 class="card-title line-clamp-1">{movie.title || movie.name}</h2>
 						<p class="line-clamp-3">{movie.overview}</p>
 						<div class="card-actions justify-end">
-							<a href="{movie.media_type}/{movie.id}" class="btn btn-primary">See more</a>
+							<a href="/{movie.media_type}/{movie.id}" class="btn btn-primary">See more</a>
 						</div>
 					</div>
 				</div>
