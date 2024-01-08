@@ -2,22 +2,42 @@
 	export let data;
 
 	const movieData = data.movieDetails;
-	console.log(movieData);
+	const formattedYear = new Date(movieData.release_date).getFullYear();
+
+	const formattedDate = new Date(movieData.release_date).toLocaleDateString('en-US', {
+		year: 'numeric',
+		month: 'numeric',
+		day: 'numeric'
+	});
+
+	const test = movieData.genres
+		.map((genre, i) => `${genre.name}${i < movieData.genres.length - 1 ? ', ' : ' • '}`)
+		.join('');
 </script>
 
 <div
 	class="full-width-div"
 	style="background-image: url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces{movieData.backdrop_path})"
 >
-	<div class="overlay py-4">
-		<div class="container mx-auto text-white">
-			<h1>{movieData.title}</h1>
-			<p>{movieData.overview}</p>
-			<img
-				src={`https://image.tmdb.org/t/p/w300${movieData.poster_path}`}
-				alt="poster"
-				class="rounded"
-			/>
+	<div class="overlay">
+		<div class="container mx-auto">
+			<div class="card card-side shadow-xl text-white py-8">
+				<img
+					src={`https://image.tmdb.org/t/p/w300${movieData.poster_path}`}
+					alt="poster"
+					class="rounded"
+				/>
+				<div class="card-body">
+					<h1 class="card-title text-4xl font-bold">
+						{movieData.title} <span class="text-gray-300 font-normal">({formattedYear})</span>
+					</h1>
+					<div>
+						<span>{formattedDate} •</span>
+						{test}
+					</div>
+					<p>{movieData.overview}</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
