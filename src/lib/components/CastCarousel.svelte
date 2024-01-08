@@ -13,7 +13,7 @@
 		emblaApi = event.detail;
 	};
 
-	const picture = (cast) => {
+	const checkProfileImage = (cast) => {
 		return cast.profile_path ? `https://image.tmdb.org/t/p/w138_and_h175_face${cast.profile_path}` : '/default_icon.svg';
 	}
 </script>
@@ -29,7 +29,7 @@
 						<figure>
 							<img
 								class="rounded-md"
-								src={picture(cast)}
+								src={checkProfileImage(cast)}
 								alt={cast.name}
 							/>
 						</figure>
