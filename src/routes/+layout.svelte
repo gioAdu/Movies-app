@@ -2,7 +2,7 @@
 	import '../app.css';
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
-	import ThemeController from '../lib/components/ThemeController.svelte';
+	import ThemeController from '$lib/components/ThemeController.svelte';
 
 	let isDark = JSON.parse($page.data.isDark);
 
