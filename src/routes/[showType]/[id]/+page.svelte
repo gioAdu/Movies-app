@@ -28,18 +28,16 @@
 >
 	<div class="overlay">
 		<div class="container mx-auto">
-			<div class="card sm:card-side items-center shadow-xl text-white py-8">
+			<div class="card md:card-side items-center shadow-xl text-white py-8 w-full">
 				<div class="relative">
 					<div class="absolute -right-5 -top-5">
 						<RatingWheel movie={movieData} wheelSize="4" />
 					</div>
-					<figure>
 						<img
-							src={`https://image.tmdb.org/t/p/w300${movieData.poster_path}`}
+							src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${movieData.poster_path}`}
 							alt="poster"
-							class="rounded"
+							class="rounded min-w-56"
 						/>
-					</figure>
 				</div>
 				<div class="card-body">
 					<h1 class="card-title text-4xl font-bold">
