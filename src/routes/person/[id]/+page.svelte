@@ -43,7 +43,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="w-full md:w-8/12 mt-5 md:mt-0">
+	<div class="w-full md:w-8/12 mt-5 md:mt-0 p-4">
 		<h1 class="text-4xl font-bold pb-6">{personInfo.name}</h1>
 
 		<h2 class="text-2xl font-bold">Biography</h2>
