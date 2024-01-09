@@ -18,10 +18,12 @@
 		<div class="flex gap-2">
 			<a href="/" class="text-4xl text-white">Home</a>
 
-			<button
+			<div
 				class="dropdown"
 				class:dropdown-hover={enableDropdownHover}
 				on:mouseenter={() => (enableDropdownHover = true)}
+				role="button"
+				tabindex="0"
 			>
 				<div tabindex="0" role="button" class="btn btn-accent m-1">Movies</div>
 
@@ -32,12 +34,14 @@
 					<li><a href="/movies" on:click={() => (enableDropdownHover = false)}>Popular</a></li>
 					<li><a href="/" on:click={() => (enableDropdownHover = false)}>Top rated</a></li>
 				</ul>
-			</button>
+			</div>
 
-			<button
+			<div
 				class="dropdown dropdown-hover"
 				class:dropdown-hover={enableDropdownHover}
 				on:mouseenter={() => (enableDropdownHover = true)}
+				role="button"
+				tabindex="0"
 			>
 				<div tabindex="0" role="button" class="btn btn-accent m-1">TV Shows</div>
 
@@ -48,7 +52,7 @@
 					<li><a href="/movies" on:click={() => (enableDropdownHover = false)}>Popular</a></li>
 					<li><a href="/" on:click={() => (enableDropdownHover = false)}>Top rated</a></li>
 				</ul>
-			</button>
+			</div>
 		</div>
 
 		<ThemeController {isDark} />
