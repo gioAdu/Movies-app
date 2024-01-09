@@ -2,6 +2,7 @@
 	import ThemeController from '$lib/components/ThemeController.svelte';
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
+	import DropDownButton from './DropDownButton.svelte';
 
 	let isDark = JSON.parse($page.data.isDark);
 
@@ -18,41 +19,9 @@
 		<div class="flex gap-2">
 			<a href="/" class="text-4xl text-white">Home</a>
 
-			<div
-				class="dropdown"
-				class:dropdown-hover={enableDropdownHover}
-				on:mouseenter={() => (enableDropdownHover = true)}
-				role="button"
-				tabindex="0"
-			>
-				<div tabindex="-1" role="button" class="btn btn-accent m-1">Movies</div>
+			<DropDownButton title="Movies" items={['Popular', 'Top rated']} />
 
-				<ul
-					tabindex="-1"
-					class="dropdown-content z-[1] menu p-2 bg-accent rounded-md w-52 text-neutral"
-				>
-					<li><a href="/movies" on:click={() => (enableDropdownHover = false)}>Popular</a></li>
-					<li><a href="/" on:click={() => (enableDropdownHover = false)}>Top rated</a></li>
-				</ul>
-			</div>
-
-			<div
-				class="dropdown dropdown-hover"
-				class:dropdown-hover={enableDropdownHover}
-				on:mouseenter={() => (enableDropdownHover = true)}
-				role="button"
-				tabindex="0"
-			>
-				<div tabindex="-1" role="button" class="btn btn-accent m-1">TV Shows</div>
-
-				<ul
-					tabindex="-1"
-					class="dropdown-content z-[1] menu p-2 bg-accent rounded-md w-52 text-neutral"
-				>
-					<li><a href="/movies" on:click={() => (enableDropdownHover = false)}>Popular</a></li>
-					<li><a href="/" on:click={() => (enableDropdownHover = false)}>Top rated</a></li>
-				</ul>
-			</div>
+			<DropDownButton title="TV Shows" items={['Popular', 'Top rated']} />
 		</div>
 
 		<ThemeController {isDark} />
