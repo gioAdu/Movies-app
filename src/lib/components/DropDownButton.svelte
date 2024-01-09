@@ -1,7 +1,8 @@
 <script>
+	export let title;
+	export let items;
+
 	let enableDropdownHover = true;
-  export let title
-  export let items
 </script>
 
 <div
@@ -14,8 +15,8 @@
 	<div tabindex="-1" role="button" class="btn btn-accent m-1">{title}</div>
 
 	<ul tabindex="-1" class="dropdown-content z-[1] menu p-2 bg-accent rounded-md w-52 text-neutral">
-    {#each items as item}
-      <li><a href="/movies" on:click={() => (enableDropdownHover = false)}>{item}</a></li>
-    {/each}
+		{#each items as item}
+			<li><a href="/movies" on:click={() => (enableDropdownHover = false)}>{item}</a></li>
+		{/each}
 	</ul>
 </div>
