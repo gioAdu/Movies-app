@@ -41,7 +41,7 @@
 </div>
 
 <div class="p-2">
-	<div class="flex items-center gap-4 py-5">
+	<div class="flex flex-wrap items-center justify-center md:justify-normal gap-4 py-5">
 		<h2 class="text-3xl">Trending Movies |</h2>
 		<label class="flex cursor-pointer gap-2 items-end">
 			<span class="label-text text-xl">Today</span>
@@ -60,7 +60,7 @@
 </div>
 
 <div class="p-2">
-	<div class="flex items-center gap-4 py-5">
+	<div class="flex flex-wrap items-center justify-center md:justify-normal gap-4 py-5">
 		<h2 class="text-3xl">Trending TV Shows |</h2>
 		<label class="flex cursor-pointer gap-2 items-end">
 			<span class="label-text text-xl">Today</span>
