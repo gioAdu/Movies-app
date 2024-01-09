@@ -25,7 +25,7 @@
 				role="button"
 				tabindex="0"
 			>
-				<div tabindex="0" role="button" class="btn btn-accent m-1">Movies</div>
+				<div tabindex="-1" role="button" class="btn btn-accent m-1">Movies</div>
 
 				<ul
 					tabindex="-1"
@@ -43,7 +43,7 @@
 				role="button"
 				tabindex="0"
 			>
-				<div tabindex="0" role="button" class="btn btn-accent m-1">TV Shows</div>
+				<div tabindex="-1" role="button" class="btn btn-accent m-1">TV Shows</div>
 
 				<ul
 					tabindex="-1"
