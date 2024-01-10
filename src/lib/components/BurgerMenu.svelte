@@ -27,8 +27,8 @@
 					<details>
 						<summary>Movies</summary>
 						<ul>
-							<li><a href="/" on:click={toggleDrawer}>Popular</a></li>
-							<li><a href="/" on:click={toggleDrawer}>Top rated</a></li>
+							<li><a href="/movie/popular" on:click={toggleDrawer}>Popular</a></li>
+							<li><a href="/movie/top_rated" on:click={toggleDrawer}>Top rated</a></li>
 						</ul>
 					</details>
 				</li>
@@ -37,8 +37,8 @@
 					<details>
 						<summary>TV Shows</summary>
 						<ul>
-							<li><a href="/" on:click={toggleDrawer}>Popular</a></li>
-							<li><a href="/" on:click={toggleDrawer}>Top rated</a></li>
+							<li><a href="/movie/popular" on:click={toggleDrawer}>Popular</a></li>
+							<li><a href="/movie/top_rated" on:click={toggleDrawer}>Top rated</a></li>
 						</ul>
 					</details>
 				</li>
