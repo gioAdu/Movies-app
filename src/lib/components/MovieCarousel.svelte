@@ -9,7 +9,7 @@
 
 	let emblaApi;
 	let options = { dragFree: true, slidesToScroll: 2};
-	let plugins = [Autoplay({ delay: 2000, stopOnMouseEnter: true, stopOnInteraction: false })];
+	let plugins = [Autoplay({ delay: 5000, stopOnMouseEnter: true, stopOnInteraction: false })];
 
 	const onInit = (event) => {
 		emblaApi = event.detail;
