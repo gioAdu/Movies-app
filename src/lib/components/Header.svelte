@@ -18,9 +18,9 @@
 			<a href="/" class="text-4xl text-white">Home</a>
 
 			<div class=" hidden sm:block">
-				<DropDownButton title="Movies" items={['Popular', 'Top rated']} />
+				<DropDownButton title="Movies" items={['popular', 'top_rated']} />
 
-				<DropDownButton title="TV Shows" items={['Popular', 'Top rated']} />
+				<DropDownButton title="TV Shows" items={['popular', 'top_rated']} />
 			</div>
 		</div>
 
