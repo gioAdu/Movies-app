@@ -17,14 +17,32 @@
 
 		<ul class="menu p-4 w-full min-h-full bg-neutral text-white relative">
 			<li class="absolute right-4 top-4 z-10">
-				<button  on:click={toggleDrawer} tabindex="0">
+				<button on:click={toggleDrawer} tabindex="0">
 					<img src="/close_icon.svg" alt="close" />
 				</button>
-
 			</li>
 
-			<li><a href="/" on:click={toggleDrawer}>Sidebar Item 1</a></li>
-			<li><a href="/" on:click={toggleDrawer}>Sidebar Item 2</a></li>
+			<ul class="menu w-full bg-accent rounded-box mt-8 text-neutral font-bold">
+				<li>
+					<details>
+						<summary>Movies</summary>
+						<ul>
+							<li><a href="/" on:click={toggleDrawer}>Popular</a></li>
+							<li><a href="/" on:click={toggleDrawer}>Top rated</a></li>
+						</ul>
+					</details>
+				</li>
+
+				<li>
+					<details>
+						<summary>TV Shows</summary>
+						<ul>
+							<li><a href="/" on:click={toggleDrawer}>Popular</a></li>
+							<li><a href="/" on:click={toggleDrawer}>Top rated</a></li>
+						</ul>
+					</details>
+				</li>
+			</ul>
 		</ul>
 	</div>
 </div>
