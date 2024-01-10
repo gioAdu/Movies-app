@@ -24,7 +24,7 @@
 			<div
 				class="embla__slide p-2 shrink-0 grow-0 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/6"
 			>
-				<div class="card bg-base-100 shadow-xl h-full">
+				<div class="card bg-base-100 shadow-md  h-full">
 					<div class="relative">
 						<figure>
 							<img

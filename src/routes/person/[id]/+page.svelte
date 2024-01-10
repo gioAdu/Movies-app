@@ -1,7 +1,7 @@
 <script>
 	import { getGender } from '$lib/helpers/genderFormatter';
 	import MovieCarousel from '$lib/components/MovieCarousel.svelte';
-  
+
 	export let data;
 	const creditsList = data.sortedList;
 	const personInfo = data.personInfo;
@@ -11,7 +11,7 @@
 
 <div class="flex flex-wrap mt-6 gap-5">
 	<div class="md:w-3/12 w-full">
-		<div class="card bg-base-100 shadow-xl">
+		<div class="card bg-base-100 shadow-md">
 			<figure>
 				<img
 					src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${personInfo.profile_path}`}
@@ -52,9 +52,9 @@
 		<div>
 			<h3 class="text-2xl font-bold mt-6">Known for</h3>
 			<div>
-        {#key data}
-				  <MovieCarousel data={creditsList} showWheel = {false}/>
-        {/key}
+				{#key data}
+					<MovieCarousel data={creditsList} showWheel={false} />
+				{/key}
 			</div>
 		</div>
 	</div>

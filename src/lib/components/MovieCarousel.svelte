@@ -5,7 +5,7 @@
 	import RatingWheel from './RatingWheel.svelte';
 
 	export let data;
-	export let showWheel = true
+	export let showWheel = true;
 
 	let emblaApi;
 	let options = { loop: false, dragFree: true, containScroll: 'keepSnaps', slidesToScroll: 2 };
@@ -22,12 +22,12 @@
 			<div
 				class="embla__slide p-2 shrink-0 grow-0 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 mx-auto"
 			>
-				<div class="card bg-base-100 shadow-xl">
+				<div class="card bg-base-100 shadow-md">
 					<div class="relative">
 						{#if showWheel}
-						<div class="left-16 absolute -bottom-6">
-							<RatingWheel {movie} />
-						</div>
+							<div class="left-16 absolute -bottom-6">
+								<RatingWheel {movie} />
+							</div>
 						{/if}
 						<figure>
 							<img
