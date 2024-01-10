@@ -16,7 +16,7 @@
 
 	<ul tabindex="-1" class="dropdown-content z-[1] menu p-2 bg-accent rounded-md w-52 text-neutral">
 		{#each items as item}
-			<li><a href="/movies" on:click={() => (enableDropdownHover = false)}>{item}</a></li>
+			<li><a href="/movie/{item}" on:click={() => (enableDropdownHover = false)}>{item}</a></li>
 		{/each}
 	</ul>
 </div>
