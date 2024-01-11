@@ -24,7 +24,7 @@
 			body: JSON.stringify({ pageNumber, params })
 		};
 
-		const response = await fetch(`/api`, options);
+		const response = await fetch(`/api/pagination`, options);
 		const resp = await response.json();
 
 		newBatch = resp.newData.results;
