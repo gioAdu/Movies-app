@@ -2,8 +2,9 @@
 	import { checkProfileImage } from '$lib/helpers/checkProfileImage.js';
 
 	export let person;
+	export let baseSrc
 
-	const imagePath = checkProfileImage(person, 'https://image.tmdb.org/t/p/w470_and_h470_face');
+	const imagePath = checkProfileImage(person, baseSrc);
 </script>
 
 <div class="card bg-base-100 shadow-md h-full">
