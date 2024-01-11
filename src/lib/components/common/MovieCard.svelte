@@ -18,7 +18,7 @@
 					<RatingWheel {movie} />
 				</div>
 			{/if}
-			<img class="rounded-md max-h-80" src={imagePath(movie)} alt={movie.title || movie.name} />
+			<img class="rounded-md h-80 object-cover" src={imagePath(movie)} alt={movie.title || movie.name} />
 		</div>
 	</div>
 	<div class="card-body h-1/2">
