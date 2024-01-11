@@ -21,6 +21,8 @@
 				<DropDownButton type='movie' title="Movies" items={['popular', 'top_rated']} />
 
 				<DropDownButton type='tv' title="TV Shows" items={['popular', 'top_rated']} />
+
+				<DropDownButton type='person' title="People" items={['popular']} />
 			</div>
 		</div>
 
