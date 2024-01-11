@@ -5,6 +5,7 @@
 	import MovieCard from '$lib/components/common/MovieCard.svelte';
 
 	export let data;
+	export let showWheel = true;
 
 	let emblaApi;
 	let options = { dragFree: true, slidesToScroll: 2};
@@ -19,9 +20,9 @@
 	<div class="embla__container" transition:slide={{ duration: 400 }}>
 		{#each data as movie}
 			<div
-				class="embla__slide p-2 shrink-0 grow-0 basis-full sm:basis-1/2 md:basis-1/3 xl:basis-1/4 mx-auto"
+				class="embla__slide p-2 shrink-0 grow-0 basis-full sm:basis-1/2 md:basis-1/3 xl:basis-1/4 "
 			>
-				<MovieCard {movie}/>
+				<MovieCard {movie} {showWheel}/>
 			</div>
 		{/each}
 	</div>
