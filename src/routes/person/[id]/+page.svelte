@@ -18,9 +18,7 @@
 <div class="flex flex-wrap mt-6 gap-5">
 	<div class="md:w-3/12 w-full">
 		<div class="card bg-base-100 shadow-md">
-			<figure>
 				<img src={checkProfileImage(personInfo)} alt="Shoes" />
-			</figure>
 			<div class="card-body">
 				<h2 class="card-title text-2xl">Personal Info</h2>
 
