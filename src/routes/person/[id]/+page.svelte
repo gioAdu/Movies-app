@@ -1,6 +1,6 @@
 <script>
 	import { getGender } from '$lib/helpers/genderFormatter';
-	import MovieCarousel from '$lib/components/MovieCarousel.svelte';
+	import MovieCarousel from '$lib/components/features/MovieCarousel.svelte';
 
 	export let data;
 	const creditsList = data.sortedList;
