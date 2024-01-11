@@ -35,7 +35,7 @@
 <div class="flex flex-wrap mt-6">
 	{#each peopleListData as item}
 		<div class="p-2 w-full sm:w-1/2 md:w-1/3 xl:w-1/4">
-			<PersonCard person={item} />
+			<PersonCard person={item} baseSrc='https://image.tmdb.org/t/p/w470_and_h470_face'/>
 		</div>
 	{/each}
 	<InfiniteScroll
