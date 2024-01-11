@@ -42,6 +42,15 @@
 						</ul>
 					</details>
 				</li>
+
+				<li>
+					<details>
+						<summary>Person</summary>
+						<ul>
+							<li><a href="/person" on:click={toggleDrawer}>Popular</a></li>
+						</ul>
+					</details>
+				</li>
 			</ul>
 		</ul>
 	</div>
