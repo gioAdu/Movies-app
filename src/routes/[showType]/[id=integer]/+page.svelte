@@ -1,8 +1,8 @@
 <script>
-	import RatingWheel from '$lib/components/RatingWheel.svelte';
+	import RatingWheel from '$lib/components/features/RatingWheel.svelte';
 	import { formatRuntime } from '$lib/helpers/runtimeFormatter';
 	import { formatNumber } from '$lib/helpers/numberFormatter';
-	import CastCarousel from '$lib/components/CastCarousel.svelte';
+	import CastCarousel from '$lib/components/features/CastCarousel.svelte';
 	export let data;
 
 	const movieData = data.movieDetails;
