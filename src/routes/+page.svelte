@@ -1,5 +1,5 @@
 <script>
-	import MovieCarousel from '$lib/components/MovieCarousel.svelte';
+	import MovieCarousel from '$lib/components/features/MovieCarousel.svelte';
 
 	export let data;
 
@@ -17,7 +17,7 @@
 			body: JSON.stringify({ time, type })
 		};
 
-		const res = await fetch('/api', options);
+		const res = await fetch('/api/trending', options);
 		const responseData = await res.json();
 
 		if (type === 'movie') {
