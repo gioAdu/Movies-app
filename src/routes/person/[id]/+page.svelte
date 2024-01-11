@@ -1,16 +1,14 @@
 <script>
 	import { getGender } from '$lib/helpers/genderFormatter';
 	import MovieCarousel from '$lib/components/features/MovieCarousel.svelte';
+	import { checkProfileImage } from '$lib/helpers/checkProfileImage.js';
 
 	export let data;
 	const creditsList = data.sortedList;
 	const personInfo = data.personInfo;
+	const baseUrl = 'https://image.tmdb.org/t/p/w470_and_h470_face';
 
-	const checkProfileImage = (cast) => {
-		return cast.profile_path
-			? `https://image.tmdb.org/t/p/w138_and_h175_face${cast.profile_path}`
-			: '/default_icon.svg';
-	};
+	const imagePath = checkProfileImage(personInfo, baseUrl);
 
 	const gender = getGender(personInfo.gender);
 </script>
@@ -18,7 +16,7 @@
 <div class="flex flex-wrap mt-6 gap-5">
 	<div class="md:w-3/12 w-full">
 		<div class="card bg-base-100 shadow-md">
-				<img src={checkProfileImage(personInfo)} alt="Shoes" />
+			<img src={imagePath} alt="Shoes" />
 			<div class="card-body">
 				<h2 class="card-title text-2xl">Personal Info</h2>
 
