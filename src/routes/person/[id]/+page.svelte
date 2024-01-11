@@ -6,6 +6,12 @@
 	const creditsList = data.sortedList;
 	const personInfo = data.personInfo;
 
+	const checkProfileImage = (cast) => {
+		return cast.profile_path
+			? `https://image.tmdb.org/t/p/w138_and_h175_face${cast.profile_path}`
+			: '/default_icon.svg';
+	};
+
 	const gender = getGender(personInfo.gender);
 </script>
 
@@ -13,10 +19,7 @@
 	<div class="md:w-3/12 w-full">
 		<div class="card bg-base-100 shadow-md">
 			<figure>
-				<img
-					src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${personInfo.profile_path}`}
-					alt="Shoes"
-				/>
+				<img src={checkProfileImage(personInfo)} alt="Shoes" />
 			</figure>
 			<div class="card-body">
 				<h2 class="card-title text-2xl">Personal Info</h2>
@@ -46,16 +49,20 @@
 	<div class="w-full md:w-8/12 mt-5 md:mt-0 p-4">
 		<h1 class="text-4xl font-bold pb-6">{personInfo.name}</h1>
 
-		<h2 class="text-2xl font-bold">Biography</h2>
-		<div>{personInfo.biography}</div>
+		{#if personInfo.biography}
+			<h2 class="text-2xl font-bold">Biography</h2>
+			<div>{personInfo.biography}</div>
+		{/if}
 
-		<div>
-			<h3 class="text-2xl font-bold mt-6">Known for</h3>
+		{#if creditsList}
 			<div>
-				{#key data}
-					<MovieCarousel data={creditsList} showWheel={false} />
-				{/key}
+				<h3 class="text-2xl font-bold mt-6">Known for</h3>
+				<div>
+					{#key data}
+						<MovieCarousel data={creditsList} showWheel={false} />
+					{/key}
+				</div>
 			</div>
-		</div>
+		{/if}
 	</div>
 </div>
