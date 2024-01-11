@@ -1,30 +1,31 @@
 <script>
-	import RatingWheel from "../features/RatingWheel.svelte";
-  export let showWheel = true;
-  export let movie
+	import RatingWheel from '../features/RatingWheel.svelte';
+	export let showWheel = true;
+	export let movie;
 
+	const imagePath = (movie) => {
+		return movie.poster_path
+			? `https://image.tmdb.org/t/p/w220_and_h330_face${movie.poster_path}`
+			: '/movie_placeholder.png';
+	};
 </script>
 
 <div class="card bg-base-100 shadow-md h-full">
-  <div class="flex justify-center relative">
-    <div class='relative'>
-      {#if showWheel}
-      <div class="-left-2 absolute -bottom-5">
-        <RatingWheel {movie} />
-      </div>
-    {/if}
-      <img
-        class="rounded-md"
-        src={`https://image.tmdb.org/t/p/w220_and_h330_face${movie.poster_path}`}
-        alt="Shoes"
-      />
-    </div>
-  </div>
-  <div class="card-body">
-    <h2 class="card-title line-clamp-1">{movie.title || movie.name}</h2>
-    <p class="line-clamp-3">{movie.overview}</p>
-    <div class="card-actions justify-end">
-      <a href="/{movie.media_type}/{movie.id}" class="btn btn-primary">See more</a>
-    </div>
-  </div>
+	<div class="flex justify-center relative">
+		<div class="relative">
+			{#if showWheel}
+				<div class="-left-2 absolute -bottom-5">
+					<RatingWheel {movie} />
+				</div>
+			{/if}
+			<img class="rounded-md max-h-80" src={imagePath(movie)} alt={movie.title || movie.name} />
+		</div>
+	</div>
+	<div class="card-body h-1/2">
+		<h2 class="card-title line-clamp-1">{movie.title || movie.name}</h2>
+		<p class="line-clamp-3">{movie.overview}</p>
+		<div class="card-actions justify-end">
+			<a href="/{movie.media_type}/{movie.id}" class="btn btn-primary">See more</a>
+		</div>
+	</div>
 </div>
