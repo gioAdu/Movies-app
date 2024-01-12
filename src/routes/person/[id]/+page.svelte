@@ -12,8 +12,6 @@
 	$title = `${personInfo.name}`;
 	$description = `${personInfo.biography}}`;
 
-	console.log(personInfo);
-
 	const baseUrl = 'https://image.tmdb.org/t/p/w470_and_h470_face';
 
 	const imagePath = checkProfileImage(personInfo, baseUrl);
