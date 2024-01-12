@@ -10,9 +10,13 @@ export async function getData(url) {
 			Authorization: `Bearer ${API_KEY}`
 		}
 	};
+	
+	try {
+		const response = await fetch(`${baseUrl}${url}`, options);
+		const data = await response.json();
 
-	const response = await fetch(`${baseUrl}${url}`, options);
-	const data = await response.json();
-
-	return data;
+		return data;
+	} catch (error) {
+		console.error(error);
+	}
 }
