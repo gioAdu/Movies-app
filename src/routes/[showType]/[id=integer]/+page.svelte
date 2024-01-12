@@ -10,7 +10,6 @@
 	export let data;
 
 	const movieData = data.movieDetails;
-	console.log(movieData);
 	const cast = data.cast.cast;
 
 	$title = `${movieData.title || movieData.name}`;
