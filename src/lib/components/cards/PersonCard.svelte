@@ -2,7 +2,7 @@
 	import { checkProfileImage } from '$lib/helpers/checkProfileImage.js';
 
 	export let person;
-	export let baseSrc
+	export let baseSrc;
 
 	const imagePath = checkProfileImage(person, baseSrc);
 </script>
