@@ -18,7 +18,7 @@
 			<img class="rounded-md h-80 object-cover" src={imagePath} alt={movie.title || movie.name} />
 		</div>
 	</div>
-	<div class="card-body h-1/2">
+	<div class="card-body">
 		<h2 class="card-title line-clamp-1">{movie.title || movie.name}</h2>
 		<p class="line-clamp-3">{movie.overview}</p>
 		<div class="card-actions justify-end">
