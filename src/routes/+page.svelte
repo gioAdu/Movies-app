@@ -1,5 +1,6 @@
 <script>
 	import MovieCarousel from '$lib/components/features/MovieCarousel.svelte';
+	import SearchInput from '$lib/components/features/SearchInput.svelte';
 
 	export let data;
 
@@ -26,18 +27,13 @@
 			return (TVData = responseData.moviesData.results);
 		}
 	};
-
 </script>
 
 <div class="flex px-4 pt-10 flex-col gap-3 pb-4 border border-accent rounded-md mt-4 mx-2">
 	<h1 class="text-4xl">Welcome</h1>
 	<h2 class="text-2xl">Discover movies, TV Shows and much more</h2>
 
-	<input
-		type="text"
-		placeholder="Search for movies"
-		class="input input-bordered w-full input-accent focus:outline-none"
-	/>
+	<SearchInput/>
 </div>
 
 <div class="p-2">
