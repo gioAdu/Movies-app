@@ -1,38 +1,24 @@
-# create-svelte
+# CinemaScope
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+## Description
+CinemaScope is a web application designed for everyone who wants to discover new, popular, and trending TV shows and movies, as well as popular actors.
 
-## Creating a project
+## Installation
+To get started with CinemaScope, follow these steps:
 
-If you're seeing this, you've probably already done this step. Congrats!
+1. Create an account on themoviedb.org.
+2. Obtain your API Key from themoviedb.org and add it to your environment variables as `API_KEY`.
+3. Run `npm install` to install the necessary node modules.
+4. Start the development server with `npm run dev`.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Usage
+Once you've set up CinemaScope, you can navigate the site, click on buttons, and explore a wide range of TV shows, movies, and actors.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Contributing
+Currently, we are not accepting contributions to this project.
 
-## Developing
+## License
+This project is not currently under any license.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Contact
+We are not providing contact information at this time.
