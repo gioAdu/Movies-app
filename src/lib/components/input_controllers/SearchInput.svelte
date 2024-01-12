@@ -1,6 +1,6 @@
 <script>
 	import debounceTimer from '$lib/helpers/filterLogic';
-	import HorizontalCard from '../common/HorizontalCard.svelte';
+	import HorizontalCard from '../cards/HorizontalCard.svelte';
 	let filetedList = [];
 
 	const fetchData = async (e) => {

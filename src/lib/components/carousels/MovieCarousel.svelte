@@ -2,7 +2,7 @@
 	import emblaCarouselSvelte from 'embla-carousel-svelte';
 	import Autoplay from 'embla-carousel-autoplay';
 	import { slide } from 'svelte/transition';
-	import MovieCard from '$lib/components/common/MovieCard.svelte';
+	import MovieCard from '$lib/components/cards/MovieCard.svelte';
 
 	export let data;
 	export let showWheel = true;

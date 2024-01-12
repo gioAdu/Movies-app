@@ -1,9 +1,11 @@
 <script>
-	import RatingWheel from '$lib/components/features/RatingWheel.svelte';
 	import { formatRuntime } from '$lib/helpers/runtimeFormatter';
 	import { formatNumber } from '$lib/helpers/numberFormatter';
 	import { checkMovieImage } from '$lib/helpers/checkMovieImage';
-	import CastCarousel from '$lib/components/features/CastCarousel.svelte';
+
+	import RatingWheel from '$lib/components/misc/RatingWheel.svelte';
+	import CastCarousel from '$lib/components/carousels/CastCarousel.svelte';
+	
 	export let data;
 
 	const movieData = data.movieDetails;

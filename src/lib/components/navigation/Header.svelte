@@ -1,5 +1,5 @@
 <script>
-	import ThemeController from '$lib/components/features/ThemeController.svelte';
+	import ThemeController from '$lib/components/input_controllers/ThemeController.svelte';
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import DropDownButton from './DropDownButton.svelte';

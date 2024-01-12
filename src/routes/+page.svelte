@@ -1,7 +1,6 @@
 <script>
-	import MovieCarousel from '$lib/components/features/MovieCarousel.svelte';
-	import SearchInput from '$lib/components/features/SearchInput.svelte';
-
+	import MovieCarousel from '$lib/components/carousels/MovieCarousel.svelte';
+	import SearchInput from '$lib/components/input_controllers/SearchInput.svelte';
 	export let data;
 
 	let moviesData = data.moviesData.results;

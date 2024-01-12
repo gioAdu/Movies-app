@@ -1,7 +1,7 @@
 <script>
 	import '../app.css';
 
-	import Header from '$lib/components/common/Header.svelte';
+	import Header from '$lib/components/navigation/Header.svelte';
 </script>
 
 <Header />

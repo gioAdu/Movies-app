@@ -1,6 +1,6 @@
 <script>
-	import InfiniteScroll from '$lib/components/common/InfiniteScroll.svelte';
-	import PersonCard from '$lib/components/common/PersonCard.svelte';
+	import InfiniteScroll from '$lib/components/misc/InfiniteScroll.svelte';
+	import PersonCard from '$lib/components/cards/PersonCard.svelte';
 	export let data;
 
 	let params = { showType: 'person', showcase: 'popular' };

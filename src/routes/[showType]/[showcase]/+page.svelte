@@ -1,6 +1,6 @@
 <script>
-	import InfiniteScroll from '$lib/components/common/InfiniteScroll.svelte';
-	import MovieCard from '$lib/components/common/MovieCard.svelte';
+	import InfiniteScroll from '$lib/components/misc/InfiniteScroll.svelte';
+	import MovieCard from '$lib/components/cards/MovieCard.svelte';
 	export let data;
 
 	let params;

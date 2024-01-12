@@ -1,5 +1,5 @@
 <script>
-	import RatingWheel from '../features/RatingWheel.svelte';
+	import RatingWheel from '../misc/RatingWheel.svelte';
 	import { checkMovieImage } from '$lib/helpers/checkMovieImage.js';
 	export let showWheel = true;
 	export let movie;
@@ -23,7 +23,7 @@
 		<h2 class="card-title line-clamp-1">{movie.title || movie.name}</h2>
 		<p class="line-clamp-3">{movie.overview}</p>
 		<div class="card-actions justify-end">
-			<a href="/{mediaType}/{movie.id}" class="btn btn-primary">See more</a>
+			<a href="/{mediaType || movie.media_type}/{movie.id}" class="btn btn-primary">See more</a>
 		</div>
 	</div>
 </div>

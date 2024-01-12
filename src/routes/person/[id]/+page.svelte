@@ -1,7 +1,8 @@
 <script>
 	import { getGender } from '$lib/helpers/genderFormatter';
-	import MovieCarousel from '$lib/components/features/MovieCarousel.svelte';
 	import { checkProfileImage } from '$lib/helpers/checkProfileImage.js';
+
+	import MovieCarousel from '$lib/components/carousels/MovieCarousel.svelte';
 
 	export let data;
 	const creditsList = data.sortedList;
