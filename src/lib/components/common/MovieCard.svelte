@@ -3,6 +3,7 @@
 	import { checkMovieImage } from '$lib/helpers/checkMovieImage.js';
 	export let showWheel = true;
 	export let movie;
+	export let mediaType
 	
 	$:imagePath = checkMovieImage(movie.poster_path, 'https://image.tmdb.org/t/p/w220_and_h330_face');
 </script>
@@ -22,7 +23,7 @@
 		<h2 class="card-title line-clamp-1">{movie.title || movie.name}</h2>
 		<p class="line-clamp-3">{movie.overview}</p>
 		<div class="card-actions justify-end">
-			<a href="/{movie.media_type}/{movie.id}" class="btn btn-primary">See more</a>
+			<a href="/{mediaType}/{movie.id}" class="btn btn-primary">See more</a>
 		</div>
 	</div>
 </div>

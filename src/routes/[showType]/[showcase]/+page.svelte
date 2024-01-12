@@ -36,7 +36,7 @@
 <div class="flex flex-wrap">
 	{#each showcaseData as item}
 		<div class="p-2 w-full sm:w-1/2 md:w-1/3 xl:w-1/4">
-			<MovieCard movie={item} />
+			<MovieCard movie={item} mediaType={params.showType} />
 		</div>
 	{/each}
 	<InfiniteScroll
