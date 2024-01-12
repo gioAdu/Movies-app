@@ -17,7 +17,7 @@
 </script>
 
 <div class="embla" use:emblaCarouselSvelte={{ options, plugins }} on:emblaInit={onInit}>
-	<div class="embla__container" in:slide={{ duration: 400 }}>
+	<div class="embla__container" in:slide={{ duration: 300 }}>
 		{#each data as cast}
 			<div
 				class="embla__slide p-2 shrink-0 grow-0 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/6"
