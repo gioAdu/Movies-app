@@ -2,6 +2,7 @@
 	import RatingWheel from '$lib/components/features/RatingWheel.svelte';
 	import { formatRuntime } from '$lib/helpers/runtimeFormatter';
 	import { formatNumber } from '$lib/helpers/numberFormatter';
+	import { checkMovieImage } from '$lib/helpers/checkMovieImage';
 	import CastCarousel from '$lib/components/features/CastCarousel.svelte';
 	export let data;
 
@@ -20,11 +21,15 @@
 	const genres = movieData.genres
 		.map((genre, i) => `${genre.name}${i < movieData.genres.length - 1 ? ', ' : ' • '}`)
 		.join('');
+
+	const imagePath = checkMovieImage(movieData?.poster_path,'https://image.tmdb.org/t/p/w300_and_h450_bestv2')
+
+	const bgPath = checkMovieImage(movieData?.backdrop_path,'https://image.tmdb.org/t/p/w1920_and_h800_multi_faces')
 </script>
 
 <div
-	class="full-width-div"
-	style="background-image: url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces{movieData.backdrop_path})"
+	class="full-width-div bg-cover bg-no-repeat"
+	style="background-image: url({bgPath})"
 >
 	<div class="overlay">
 		<div class="container mx-auto">
@@ -34,7 +39,7 @@
 						<RatingWheel movie={movieData} wheelSize="4" />
 					</div>
 					<img
-						src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${movieData.poster_path}`}
+						src={imagePath}
 						alt="poster"
 						class="rounded min-w-56"
 					/>
