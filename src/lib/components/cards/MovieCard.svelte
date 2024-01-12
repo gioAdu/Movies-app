@@ -3,7 +3,7 @@
 	import { checkMovieImage } from '$lib/helpers/checkMovieImage.js';
 	export let showWheel = true;
 	export let movie;
-	export let mediaType
+	export let mediaType = null
 	
 	$:imagePath = checkMovieImage(movie.poster_path, 'https://image.tmdb.org/t/p/w220_and_h330_face');
 </script>

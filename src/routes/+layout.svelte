@@ -1,8 +1,17 @@
 <script>
 	import '../app.css';
 
+	import { title, description } from '$lib/stores/store';
 	import Header from '$lib/components/navigation/Header.svelte';
 </script>
+
+<svelte:head>
+	<title>{$title} - Movies app</title>
+	<meta
+		name="description"
+		content={$description}
+	/>
+</svelte:head>
 
 <Header />
 

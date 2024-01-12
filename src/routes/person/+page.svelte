@@ -1,7 +1,14 @@
 <script>
 	import InfiniteScroll from '$lib/components/misc/InfiniteScroll.svelte';
 	import PersonCard from '$lib/components/cards/PersonCard.svelte';
+
+	import { title, description } from '$lib/stores/store';
+
 	export let data;
+
+	$title = 'Popular people';
+	$description =
+		'Explore and discover popular actors and personalities from around the world. Stay updated with their latest works, achievements, and contributions to the world of entertainment';
 
 	let params = { showType: 'person', showcase: 'popular' };
 	let pageNumber = 1;
@@ -35,7 +42,7 @@
 <div class="flex flex-wrap mt-6">
 	{#each peopleListData as item}
 		<div class="p-2 w-full sm:w-1/2 md:w-1/3 xl:w-1/4">
-			<PersonCard person={item} baseSrc='https://image.tmdb.org/t/p/w470_and_h470_face'/>
+			<PersonCard person={item} baseSrc="https://image.tmdb.org/t/p/w470_and_h470_face" />
 		</div>
 	{/each}
 	<InfiniteScroll

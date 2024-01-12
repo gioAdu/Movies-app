@@ -1,6 +1,7 @@
 <script>
 	import InfiniteScroll from '$lib/components/misc/InfiniteScroll.svelte';
 	import MovieCard from '$lib/components/cards/MovieCard.svelte';
+	import { title, description } from '$lib/stores/store';
 	export let data;
 
 	let params;
@@ -13,6 +14,11 @@
 		pageNumber = data.showcase.page;
 		showcaseData = data.showcase.results;
 		newBatch = data.showcase.results;
+	}
+
+	$: if (params) {
+		$title = `${params.showcase} ${params.showType}s`;
+		$description = `Explore and discover ${params.showcase} ${params.showType}s. Stay updated with top rated and popular shows,`;
 	}
 
 	const getData = async () => {

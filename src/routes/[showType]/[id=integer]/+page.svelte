@@ -5,11 +5,17 @@
 
 	import RatingWheel from '$lib/components/misc/RatingWheel.svelte';
 	import CastCarousel from '$lib/components/carousels/CastCarousel.svelte';
+	import { title, description } from '$lib/stores/store';
 	
 	export let data;
 
 	const movieData = data.movieDetails;
+	console.log(movieData);
 	const cast = data.cast.cast;
+
+	$title = `${movieData.title || movieData.name}`;
+	$description = `${movieData.overview}`;
+
 	const formattedYear = new Date(movieData.release_date || movieData.first_air_date).getFullYear();
 
 	const formattedDate = new Date(

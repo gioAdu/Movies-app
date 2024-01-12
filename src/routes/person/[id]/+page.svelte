@@ -3,10 +3,17 @@
 	import { checkProfileImage } from '$lib/helpers/checkProfileImage.js';
 
 	import MovieCarousel from '$lib/components/carousels/MovieCarousel.svelte';
+	import { title, description } from '$lib/stores/store';
 
 	export let data;
 	const creditsList = data.sortedList;
 	const personInfo = data.personInfo;
+
+	$title = `${personInfo.name}`;
+	$description = `${personInfo.biography}}`;
+
+	console.log(personInfo);
+
 	const baseUrl = 'https://image.tmdb.org/t/p/w470_and_h470_face';
 
 	const imagePath = checkProfileImage(personInfo, baseUrl);

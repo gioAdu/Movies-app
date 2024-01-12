@@ -1,10 +1,15 @@
 <script>
 	import MovieCarousel from '$lib/components/carousels/MovieCarousel.svelte';
 	import SearchInput from '$lib/components/input_controllers/SearchInput.svelte';
+	import { title, description } from '$lib/stores/store';
 	export let data;
 
 	let moviesData = data.moviesData.results;
 	let TVData = data.TVData.results;
+
+	$title = 'Welcome, discover Movies, Tv Shows and more';
+	$description =
+		'Explore a wide variety of movies and TV shows with MovieCarousel. Discover new favorites, watch trailers, and more.';
 
 	const hanldeClick = async (e, type) => {
 		const time = e.target.checked ? 'week' : 'day';
@@ -32,7 +37,7 @@
 	<h1 class="text-4xl">Welcome</h1>
 	<h2 class="text-2xl">Discover movies, TV Shows and much more</h2>
 
-	<SearchInput/>
+	<SearchInput />
 </div>
 
 <div class="p-2">
