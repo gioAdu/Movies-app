@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>{$title} - Movies app</title>
+	<title>{$title} - CinemaScope</title>
 	<meta
 		name="description"
 		content={$description}
