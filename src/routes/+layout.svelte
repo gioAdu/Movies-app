@@ -7,10 +7,7 @@
 
 <svelte:head>
 	<title>{$title} - CinemaScope</title>
-	<meta
-		name="description"
-		content={$description}
-	/>
+	<meta name="description" content={$description} />
 </svelte:head>
 
 <Header />
